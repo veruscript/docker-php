@@ -4,13 +4,10 @@ FROM php:7.1-fpm
 RUN apt-get update -qq  \
  ; apt-get install -y unzip git-core libicu-dev vim-tiny ssh
 
-# FE
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
- ; apt-get install -y nodejs ; npm install -g grunt-cli yarn
-
 # Node
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
-; apt-get install -y nodejs ; npm install -g grunt-cli yarn
+; apt-get install -y nodejs ; npm install -g gulp-cli yarn
+
 # XDebug
 
 # APCU
