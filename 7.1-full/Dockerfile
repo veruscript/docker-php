@@ -37,7 +37,7 @@ RUN curl -sS http://ftp.us.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-ms
  ; dpkg -i ttf-mscorefonts.deb ; rm -f ttf-mscorefonts.deb
 
 # Latex
-RUN apt-get install -y texlive-full # 3,4GB!?!?!
+RUN apt-get install -y texlive-full # 3,4GB!?
 
 # Clean up
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apk/*
