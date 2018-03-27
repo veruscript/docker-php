@@ -20,3 +20,5 @@ RUN composer global require hirak/prestissimo
 
 # Clean up
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apk/*
+
+WORKDIR /var/www
