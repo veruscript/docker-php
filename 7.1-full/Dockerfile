@@ -1,8 +1,8 @@
 FROM php:7.1-fpm
 
 # Basic
-RUN apt-get update -qq  \
- ; apt-get install -y unzip git-core libicu-dev vim-tiny ssh \
+RUN apt-get update -qq \
+; apt-get install -y unzip git-core libicu-dev vim-tiny ssh \
   libpng12-dev libjpeg62-turbo-dev \
   libfreetype6-dev imagemagick libmagick++-dev \
   mariadb-client libxslt-dev libxml2-dev --force-yes
