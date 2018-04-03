@@ -14,14 +14,10 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 
 # XDebug
 
-# APCU
-RUN pecl install apcu-5.1.8 \
-; docker-php-ext-enable apcu
-
-# GD
+# PHP Extensions
 RUN docker-php-ext-configure zip gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 ; docker-php-ext-install zip gd pdo_mysql opcache xsl \
-; pecl install imagick ; docker-php-ext-enable imagick zip
+; pecl install imagick apcu-5.1.8 ; docker-php-ext-enable imagick zip apcu
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
