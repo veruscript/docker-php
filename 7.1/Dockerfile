@@ -17,7 +17,7 @@ RUN pecl install apcu-5.1.8 \
 
 RUN docker-php-ext-configure zip gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 ; docker-php-ext-install zip gd pdo_mysql xsl \
-; docker-php-ext-enable imagick zip
+; docker-php-ext-enable zip
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
