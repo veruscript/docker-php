@@ -7,7 +7,7 @@ RUN apt-get update -qq \
   mysql-client libxslt-dev libxml2-dev --force-yes
 # Node
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
-; apt-get install -y nodejs ; npm install -g yarn
+; apt-get install -y nodejs ; npm install -g yarn gulp-cli
 
 # XDebug
 

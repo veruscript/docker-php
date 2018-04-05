@@ -15,7 +15,7 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 # XDebug
 
 # PHP Extensions
-RUN docker-php-ext-configure zip gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 ; docker-php-ext-install zip gd pdo_mysql opcache xsl \
 ; pecl install imagick apcu-5.1.8 ; docker-php-ext-enable imagick zip apcu
 
