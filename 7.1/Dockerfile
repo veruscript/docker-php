@@ -11,15 +11,15 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 ; apt-get install -y nodejs ; npm install -g yarn gulp-cli
 
 # PECL
-RUN pecl install apcu-5.1.8 imagick
+RUN pecl install apcu-5.1.8 imagick xdebug
 
 # PHP Extensions
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 ; docker-php-ext-install zip gd pdo_mysql opcache xsl \
-; docker-php-ext-enable zip apcu imagick
+; docker-php-ext-enable zip apcu imagick xdebug
 
 # Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY --from=composer:1.6 /usr/bin/composer /usr/bin/composer
 RUN composer global require hirak/prestissimo
 
 # Clean up
